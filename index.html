@@ -3,383 +3,657 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Aleena ❤️</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Jasim ❤️ Rimsha</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(135deg,#111,#1b1b1b,#2b2b2b);
-overflow:hidden;
-height:100vh;
-color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top,#303030 0%,#171717 45%,#070707 100%);
+  color:#fff;
+  font-family:Arial,sans-serif;
+  overflow-x:hidden;
+  overflow-y:auto;
+  padding:20px 0 50px;
 }
 
-#particles{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-pointer-events:none;
-overflow:hidden;
+/* Floating hearts */
+.bg-heart{
+  position:fixed;
+  bottom:-40px;
+  font-size:22px;
+  opacity:.12;
+  pointer-events:none;
+  animation:floatHeart linear infinite;
+  z-index:0;
 }
 
-.welcome,
-.letterPage,
-#success{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-transition:.8s;
+@keyframes floatHeart{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  15%{
+    opacity:.15;
+  }
+  100%{
+    transform:translateY(-115vh) rotate(360deg);
+    opacity:0;
+  }
 }
 
-.letterPage,
-#success{
-display:none;
+/* Main card */
+.container{
+  width:92%;
+  max-width:440px;
+  margin:0 auto;
+  min-height:650px;
+  padding:32px 22px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:30px;
+  background:rgba(22,22,22,.88);
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.7),
+    0 0 45px rgba(255,55,90,.08);
+  backdrop-filter:blur(15px);
+  position:relative;
+  z-index:2;
 }
 
-.envelope{
-font-size:90px;
-animation:bounce 2s infinite;
-cursor:pointer;
-filter:drop-shadow(0 0 20px #ff4d6d);
+/* Screens */
+.screen{
+  display:none;
+  animation:screenIn .8s ease;
 }
 
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+.screen.active{
+  display:block;
+}
+
+@keyframes screenIn{
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.98);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* Welcome */
+.heart{
+  font-size:72px;
+  text-align:center;
+  margin:45px 0 25px;
+  animation:heartbeat 1.5s infinite;
+  filter:drop-shadow(0 0 18px rgba(255,60,90,.35));
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.18)}
 }
 
 h1{
-font-size:34px;
-margin-top:20px;
+  text-align:center;
+  font-size:32px;
+  margin-bottom:16px;
+  letter-spacing:.3px;
 }
 
-p{
-margin-top:10px;
-font-size:18px;
-color:#ddd;
-text-align:center;
-padding:0 20px;
+.main-text{
+  text-align:center;
+  color:#c8c8c8;
+  line-height:1.8;
+  font-size:15px;
 }
 
-#openBtn,
-#yes,
-#no{
-margin-top:25px;
-padding:14px 30px;
-border:none;
-border-radius:40px;
-font-size:18px;
-font-weight:600;
-cursor:pointer;
-transition:.3s;
+.btn{
+  display:block;
+  margin:28px auto 0;
+  padding:14px 27px;
+  border:0;
+  border-radius:50px;
+  background:linear-gradient(135deg,#ff5578,#e9154c);
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(255,30,75,.22);
+  transition:.25s;
 }
 
-#openBtn,
-#yes{
-background:#ff4d6d;
-color:white;
-box-shadow:0 0 20px rgba(255,77,109,.5);
+.btn:hover{
+  transform:translateY(-2px) scale(1.03);
 }
 
-#openBtn:hover,
-#yes:hover{
-transform:scale(1.08);
+.btn:active{
+  transform:scale(.97);
 }
 
-#no{
-background:#444;
-color:white;
-position:relative;
+.btn:disabled{
+  opacity:.6;
+}
+
+/* Letter */
+.subtitle{
+  text-align:center;
+  color:#999;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
 }
 
 .letter{
-width:90%;
-max-width:420px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(16px);
-border:1px solid rgba(255,255,255,.15);
-padding:30px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(255,255,255,.1);
-animation:zoom .7s;
-}
-
-@keyframes zoom{
-from{
-opacity:0;
-transform:scale(.8);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
+  padding:22px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:22px;
+  background:rgba(255,255,255,.035);
+  box-shadow:inset 0 0 30px rgba(255,255,255,.015);
 }
 
 .letter h2{
-text-align:center;
-margin-bottom:20px;
-color:#ff7b95;
+  font-size:23px;
+  margin-bottom:20px;
 }
 
 #typing{
-min-height:220px;
-line-height:1.8;
-white-space:pre-line;
-font-size:17px;
-color:#f5f5f5;
+  color:#d8d8d8;
+  font-size:14px;
+  line-height:1.8;
+  min-height:250px;
+  white-space:pre-line;
 }
 
-.buttons{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-top:25px;
-flex-wrap:wrap;
+/* Choices */
+.choice-title{
+  text-align:center;
+  color:#aaa;
+  font-size:13px;
+  margin-top:25px;
+  margin-bottom:12px;
 }
 
-.bigHeart{
-font-size:90px;
-margin-top:25px;
-animation:pulse 1s infinite;
+.choices{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
 }
 
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.2);}
-100%{transform:scale(1);}
+.choice input{
+  display:none;
 }
 
-.heart{
-position:absolute;
-font-size:22px;
-color:#ff4d6d;
-animation:float 6s linear forwards;
-opacity:.9;
+.choice span{
+  display:block;
+  text-align:center;
+  padding:12px 4px;
+  border-radius:14px;
+  border:1px solid #444;
+  background:#111;
+  color:#ddd;
+  font-size:12px;
+  cursor:pointer;
+  transition:.25s;
 }
 
-@keyframes float{
-0%{
-transform:translateY(100vh) scale(.5);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-120px) scale(1.3);
-opacity:0;
-}
+.choice span:hover{
+  border-color:#777;
 }
 
+.choice input:checked + span{
+  border-color:#ff4f73;
+  background:rgba(255,60,95,.16);
+  color:#fff;
+  box-shadow:0 0 18px rgba(255,50,90,.12);
+}
+
+/* Message */
+textarea{
+  display:block;
+  width:100%;
+  min-height:110px;
+  margin-top:15px;
+  padding:14px;
+  border-radius:17px;
+  border:1px solid #414141;
+  background:#0d0d0d;
+  color:white;
+  resize:vertical;
+  outline:none;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  line-height:1.5;
+}
+
+textarea:focus{
+  border-color:#ff4f73;
+}
+
+textarea::placeholder{
+  color:#707070;
+}
+
+.status{
+  min-height:20px;
+  margin-top:10px;
+  text-align:center;
+  font-size:12px;
+}
+
+.success{
+  color:#9df0ad;
+}
+
+.error{
+  color:#ff8c9d;
+}
+
+/* Final screen */
+.final-heart{
+  text-align:center;
+  font-size:95px;
+  margin:55px 0 25px;
+  animation:heartbeat 1.3s infinite;
+}
+
+.final-text{
+  text-align:center;
+  color:#ccc;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.signature{
+  text-align:center;
+  margin-top:25px;
+  line-height:1.8;
+  color:#ddd;
+}
+
+/* Mobile */
 @media(max-width:480px){
 
-.envelope{
-font-size:75px;
-}
+  body{
+    padding:12px 0 35px;
+  }
 
-h1{
-font-size:28px;
-}
+  .container{
+    width:94%;
+    padding:25px 16px;
+    min-height:0;
+    border-radius:25px;
+  }
 
-.letter{
-padding:22px;
-}
+  h1{
+    font-size:28px;
+  }
 
-#typing{
-font-size:16px;
-}
+  .heart{
+    font-size:60px;
+    margin-top:35px;
+  }
 
-button{
-font-size:16px;
-}
-}
+  .letter{
+    padding:17px;
+  }
 
+  #typing{
+    min-height:280px;
+  }
+
+  .choices{
+    grid-template-columns:1fr;
+  }
+
+  .choice span{
+    padding:13px;
+  }
+}
 </style>
-
 </head>
 
 <body>
 
-<div id="particles"></div>
+<!-- Floating background hearts -->
+<script>
+for(let i=0;i<20;i++){
 
-<div class="welcome">
+  const heart=document.createElement("div");
 
-<div class="envelope">
-💌
+  heart.className="bg-heart";
+  heart.innerHTML="❤️";
+
+  heart.style.left=Math.random()*100+"%";
+  heart.style.animationDuration=(6+Math.random()*7)+"s";
+  heart.style.animationDelay=(Math.random()*7)+"s";
+
+  document.body.appendChild(heart);
+}
+</script>
+
+
+<div class="container">
+
+  <!-- FIRST SCREEN -->
+  <section class="screen active" id="welcome">
+
+    <div class="heart">❤️</div>
+
+    <h1>Rimsha...</h1>
+
+    <p class="main-text">
+      Aapke liye ek khaas letter aaya hai...
+      <br><br>
+      Isse thoda dil se padhna. ✨
+    </p>
+
+    <button class="btn" onclick="openLetter()">
+      Open Letter 💌
+    </button>
+
+  </section>
+
+
+  <!-- LETTER SCREEN -->
+  <section class="screen" id="letterScreen">
+
+    <div class="subtitle">
+      A little message from Jasim
+    </div>
+
+    <h1>For Rimsha ❤️</h1>
+
+    <div class="letter">
+
+      <h2>Dear Rimsha ❤️</h2>
+
+      <p id="typing"></p>
+
+      <div class="choice-title">
+        Ab tumhara jawab... ❤️
+      </div>
+
+      <form
+        id="replyForm"
+        action="https://formspree.io/f/xnpqnyaa"
+        method="POST"
+      >
+
+        <div class="choices">
+
+          <label class="choice">
+            <input
+              type="radio"
+              name="choice"
+              value="Yes ❤️"
+              required
+            >
+            <span>Yes ❤️</span>
+          </label>
+
+          <label class="choice">
+            <input
+              type="radio"
+              name="choice"
+              value="Maybe 😊"
+            >
+            <span>Maybe 😊</span>
+          </label>
+
+          <label class="choice">
+            <input
+              type="radio"
+              name="choice"
+              value="No 💔"
+            >
+            <span>No 💔</span>
+          </label>
+
+        </div>
+
+
+        <textarea
+          name="message"
+          maxlength="500"
+          placeholder="Jo dil mein hai, yahan likh sakti ho... ❤️"
+          required
+        ></textarea>
+
+
+        <input
+          type="hidden"
+          name="recipient"
+          value="Rimsha"
+        >
+
+        <input
+          type="hidden"
+          name="sender"
+          value="Jasim"
+        >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="Rimsha's Reply ❤️"
+        >
+
+
+        <button
+          class="btn"
+          id="sendBtn"
+          type="submit"
+        >
+          Send My Reply 💌
+        </button>
+
+        <div
+          class="status"
+          id="status"
+        ></div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL SCREEN -->
+  <section class="screen" id="success">
+
+    <div class="final-heart">
+      ❤️
+    </div>
+
+    <h1>
+      Thank You, Rimsha ❤️
+    </h1>
+
+    <p class="final-text">
+
+      Tumhara reply Jasim tak pahunch gaya.
+
+      <br><br>
+
+      Whatever the future brings,
+      I hope it brings happiness,
+      smiles and beautiful memories.
+
+    </p>
+
+    <p class="signature">
+      With love,
+      <br>
+      <strong>Jasim ❤️</strong>
+    </p>
+
+    <button
+      class="btn"
+      onclick="location.reload()"
+    >
+      Replay ✨
+    </button>
+
+  </section>
+
 </div>
 
-<h1>Aleena ❤️</h1>
-
-<p>Aapke liye ek khaas letter aaya hai...</p>
-
-<button id="openBtn">
-Open Letter 💌
-</button>
-
-</div>
-
-<div class="letterPage">
-
-<div class="letter">
-
-<h2>Dear Aleena ❤️</h2>
-
-<p id="typing"></p>
-
-<div class="buttons">
-
-<button id="yes">
-Yes ❤️
-</button>
-
-<button id="no">
-No 💔
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<div id="success">
-
-<h1>❤️ Thank You Aleena ❤️</h1>
-
-<h2>You made Jasim the happiest person in the world 🥹❤️</h2>
-
-<div class="bigHeart">❤️</div>
-
-</div>
 
 <script>
 
-const message = `Jab se tum meri life mein aayi ho,
-har din pehle se zyada khoobsurat lagne laga hai.
+/* LETTER TEXT */
 
-Tum meri smile ki wajah ho,
-meri har dua ka sabse pyara hissa ho.
+const message =
+`Rimsha,
 
-Main perfect nahi hoon,
-lekin ek baat ka wada karta hoon...
+Kuch feelings aisi hoti hain jo words mein explain karna mushkil hota hai... ❤️
 
-Main hamesha tumhari respect karunga,
-tumhara khayal rakhunga,
-aur har khushi aur mushkil mein tumhare saath rahunga.
+Tum meri life mein ek bohat special person ho.
 
-Aleena...
+Main perfect hone ka promise nahi karta, lekin main hamesha sincere rehne, tumhari respect karne aur tumhe khush dekhne ki koshish karunga.
 
-Will You Be Mine Forever? ❤️`;
+Mujhe nahi pata future exactly kya lekar aayega...
 
-const welcome = document.querySelector(".welcome");
-const letterPage = document.querySelector(".letterPage");
-const success = document.getElementById("success");
+Lekin aaj main tumse ek simple sa sawaal poochna chahta hoon:
 
-const typing = document.getElementById("typing");
-const openBtn = document.getElementById("openBtn");
-const yes = document.getElementById("yes");
-const no = document.getElementById("no");
+Kya tum Jasim ke saath is beautiful journey ko ek chance dena chahti ho? ❤️`;
 
-openBtn.onclick = () => {
-    welcome.style.display = "none";
-    letterPage.style.display = "flex";
-    typeLetter();
-};
 
-let index = 0;
+/* OPEN LETTER */
 
-function typeLetter(){
-    if(index < message.length){
-        typing.innerHTML += message.charAt(index);
-        index++;
-        setTimeout(typeLetter,40);
+function openLetter(){
+
+  document
+    .getElementById("welcome")
+    .classList.remove("active");
+
+  document
+    .getElementById("letterScreen")
+    .classList.add("active");
+
+  const box=document.getElementById("typing");
+
+  box.textContent="";
+
+  let i=0;
+
+  function typeText(){
+
+    if(i < message.length){
+
+      box.textContent += message.charAt(i);
+
+      i++;
+
+      setTimeout(typeText,22);
+
     }
-}
 
-function createHeart(){
+  }
 
-    const heart = document.createElement("div");
-
-    heart.className="heart";
-
-    heart.innerHTML=Math.random()>0.5?"❤️":"🌹";
-
-    heart.style.left=Math.random()*100+"vw";
-
-    heart.style.fontSize=(18+Math.random()*25)+"px";
-
-    heart.style.animationDuration=(4+Math.random()*3)+"s";
-
-    document.getElementById("particles").appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },7000);
+  typeText();
 
 }
 
-setInterval(createHeart,300);
 
-yes.onclick=()=>{
+/* FORMSPREE SUBMISSION */
 
-letterPage.style.display="none";
+const form=document.getElementById("replyForm");
 
-success.style.display="flex";
+form.addEventListener("submit",async function(event){
 
-for(let i=0;i<120;i++){
+  event.preventDefault();
 
-setTimeout(createHeart,i*40);
+  const button=document.getElementById("sendBtn");
+  const status=document.getElementById("status");
 
-}
+  button.disabled=true;
+  button.innerText="Sending... 💌";
 
-}
+  status.className="status";
+  status.innerText="";
 
-function moveButton(){
 
-const x=Math.random()*(window.innerWidth-120);
+  try{
 
-const y=Math.random()*(window.innerHeight-80);
+    const response=await fetch(
+      form.action,
+      {
+        method:"POST",
+        body:new FormData(form),
+        headers:{
+          "Accept":"application/json"
+        }
+      }
+    );
 
-no.style.position="fixed";
 
-no.style.left=x+"px";
+    if(response.ok){
 
-no.style.top=y+"px";
+      status.className="status success";
 
-}
+      status.innerText=
+        "Your reply has been sent ❤️";
 
-no.addEventListener("mouseover",moveButton);
+      setTimeout(function(){
 
-no.addEventListener("touchstart",moveButton);
+        document
+          .getElementById("letterScreen")
+          .classList.remove("active");
 
-document.body.addEventListener("click",function(e){
+        document
+          .getElementById("success")
+          .classList.add("active");
 
-if(e.target!==no){
+        window.scrollTo({
+          top:0,
+          behavior:"smooth"
+        });
 
-return;
+      },1200);
 
-}
+      form.reset();
 
-moveButton();
+    }
+
+    else{
+
+      status.className="status error";
+
+      status.innerText=
+        "Something went wrong. Please try again.";
+
+    }
+
+  }
+
+  catch(error){
+
+    status.className="status error";
+
+    status.innerText=
+      "Internet connection check karke dobara try karo.";
+
+  }
+
+
+  button.disabled=false;
+
+  button.innerText="Send My Reply 💌";
 
 });
 
