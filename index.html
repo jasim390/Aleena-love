@@ -3,661 +3,426 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jasim ❤️ Rimsha</title>
+<title>I'm Sorry, Rimsha ❤️</title>
 
 <style>
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
-  min-height:100vh;
-  background:
-    radial-gradient(circle at top,#303030 0%,#171717 45%,#070707 100%);
-  color:#fff;
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
+  background:#080808;
+  color:white;
   overflow-x:hidden;
-  overflow-y:auto;
-  padding:20px 0 50px;
 }
 
-/* Floating hearts */
-.bg-heart{
+section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+}
+
+.card{
+  width:100%;
+  max-width:650px;
+  background:rgba(25,25,25,.88);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:25px;
+  padding:35px 25px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(255,255,255,.06);
+}
+
+h1{
+  font-size:42px;
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:30px;
+  margin:12px 0 20px;
+}
+
+p{
+  line-height:1.8;
+  color:#ddd;
+}
+
+.small{
+  color:#aaa;
+  margin-bottom:30px;
+}
+
+button{
+  border:none;
+  border-radius:50px;
+  padding:14px 25px;
+  margin:8px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.open{
+  background:white;
+  color:#111;
+}
+
+.yes{
+  background:#ff4f81;
+  color:white;
+}
+
+.maybe{
+  background:#444;
+  color:white;
+}
+
+.no{
+  background:#222;
+  color:#ddd;
+  position:relative;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.hidden{
+  display:none;
+}
+
+.letter{
+  text-align:left;
+  margin-top:20px;
+}
+
+.letter p{
+  white-space:pre-line;
+}
+
+textarea{
+  width:100%;
+  min-height:130px;
+  margin-top:20px;
+  padding:15px;
+  border-radius:15px;
+  border:1px solid #444;
+  background:#111;
+  color:white;
+  resize:none;
+  outline:none;
+}
+
+.send{
+  background:white;
+  color:#111;
+  margin-top:15px;
+}
+
+#message{
+  margin-top:20px;
+  color:#ff9ab5;
+  font-weight:bold;
+}
+
+.heart{
   position:fixed;
-  bottom:-40px;
-  font-size:22px;
-  opacity:.12;
-  pointer-events:none;
-  animation:floatHeart linear infinite;
-  z-index:0;
+  bottom:-20px;
+  animation:float 5s linear infinite;
+  opacity:.5;
 }
 
-@keyframes floatHeart{
+@keyframes float{
   0%{
     transform:translateY(0) rotate(0deg);
     opacity:0;
   }
-  15%{
-    opacity:.15;
-  }
+  20%{opacity:.7;}
   100%{
-    transform:translateY(-115vh) rotate(360deg);
+    transform:translateY(-110vh) rotate(360deg);
     opacity:0;
   }
 }
 
-/* Main card */
-.container{
-  width:92%;
-  max-width:440px;
-  margin:0 auto;
-  min-height:650px;
-  padding:32px 22px;
-  border:1px solid rgba(255,255,255,.13);
-  border-radius:30px;
-  background:rgba(22,22,22,.88);
-  box-shadow:
-    0 20px 70px rgba(0,0,0,.7),
-    0 0 45px rgba(255,55,90,.08);
-  backdrop-filter:blur(15px);
-  position:relative;
-  z-index:2;
-}
-
-/* Screens */
-.screen{
-  display:none;
-  animation:screenIn .8s ease;
-}
-
-.screen.active{
-  display:block;
-}
-
-@keyframes screenIn{
-  from{
-    opacity:0;
-    transform:translateY(25px) scale(.98);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
-}
-
-/* Welcome */
-.heart{
-  font-size:72px;
-  text-align:center;
-  margin:45px 0 25px;
-  animation:heartbeat 1.5s infinite;
-  filter:drop-shadow(0 0 18px rgba(255,60,90,.35));
-}
-
-@keyframes heartbeat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.18)}
-}
-
-h1{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:16px;
-  letter-spacing:.3px;
-}
-
-.main-text{
-  text-align:center;
-  color:#c8c8c8;
-  line-height:1.8;
-  font-size:15px;
-}
-
-.btn{
-  display:block;
-  margin:28px auto 0;
-  padding:14px 27px;
-  border:0;
-  border-radius:50px;
-  background:linear-gradient(135deg,#ff5578,#e9154c);
-  color:white;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 10px 30px rgba(255,30,75,.22);
-  transition:.25s;
-}
-
-.btn:hover{
-  transform:translateY(-2px) scale(1.03);
-}
-
-.btn:active{
-  transform:scale(.97);
-}
-
-.btn:disabled{
-  opacity:.6;
-}
-
-/* Letter */
-.subtitle{
-  text-align:center;
-  color:#999;
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:18px;
-}
-
-.letter{
-  padding:22px;
-  border:1px solid rgba(255,255,255,.11);
-  border-radius:22px;
-  background:rgba(255,255,255,.035);
-  box-shadow:inset 0 0 30px rgba(255,255,255,.015);
-}
-
-.letter h2{
-  font-size:23px;
-  margin-bottom:20px;
-}
-
-#typing{
-  color:#d8d8d8;
-  font-size:14px;
-  line-height:1.8;
-  min-height:250px;
-  white-space:pre-line;
-}
-
-/* Choices */
-.choice-title{
-  text-align:center;
-  color:#aaa;
-  font-size:13px;
-  margin-top:25px;
-  margin-bottom:12px;
-}
-
-.choices{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-}
-
-.choice input{
-  display:none;
-}
-
-.choice span{
-  display:block;
-  text-align:center;
-  padding:12px 4px;
-  border-radius:14px;
-  border:1px solid #444;
-  background:#111;
-  color:#ddd;
-  font-size:12px;
-  cursor:pointer;
-  transition:.25s;
-}
-
-.choice span:hover{
-  border-color:#777;
-}
-
-.choice input:checked + span{
-  border-color:#ff4f73;
-  background:rgba(255,60,95,.16);
-  color:#fff;
-  box-shadow:0 0 18px rgba(255,50,90,.12);
-}
-
-/* Message */
-textarea{
-  display:block;
-  width:100%;
-  min-height:110px;
-  margin-top:15px;
-  padding:14px;
-  border-radius:17px;
-  border:1px solid #414141;
-  background:#0d0d0d;
-  color:white;
-  resize:vertical;
-  outline:none;
-  font-family:Arial,sans-serif;
-  font-size:14px;
-  line-height:1.5;
-}
-
-textarea:focus{
-  border-color:#ff4f73;
-}
-
-textarea::placeholder{
-  color:#707070;
-}
-
-.status{
-  min-height:20px;
-  margin-top:10px;
-  text-align:center;
-  font-size:12px;
-}
-
-.success{
-  color:#9df0ad;
-}
-
-.error{
-  color:#ff8c9d;
-}
-
-/* Final screen */
-.final-heart{
-  text-align:center;
-  font-size:95px;
-  margin:55px 0 25px;
-  animation:heartbeat 1.3s infinite;
-}
-
-.final-text{
-  text-align:center;
-  color:#ccc;
-  line-height:1.8;
-  font-size:15px;
-}
-
-.signature{
-  text-align:center;
-  margin-top:25px;
-  line-height:1.8;
-  color:#ddd;
-}
-
-/* Mobile */
-@media(max-width:480px){
-
-  body{
-    padding:12px 0 35px;
-  }
-
-  .container{
-    width:94%;
-    padding:25px 16px;
-    min-height:0;
-    border-radius:25px;
-  }
-
-  h1{
-    font-size:28px;
-  }
-
-  .heart{
-    font-size:60px;
-    margin-top:35px;
-  }
-
-  .letter{
-    padding:17px;
-  }
-
-  #typing{
-    min-height:280px;
-  }
-
-  .choices{
-    grid-template-columns:1fr;
-  }
-
-  .choice span{
-    padding:13px;
-  }
+@media(max-width:500px){
+  h1{font-size:34px;}
+  h2{font-size:25px;}
+  .card{padding:30px 20px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- Floating background hearts -->
-<script>
-for(let i=0;i<20;i++){
+<!-- INTRO -->
+<section id="intro">
+  <div class="card">
+    <h1>Rimsha… ❤️</h1>
 
-  const heart=document.createElement("div");
-
-  heart.className="bg-heart";
-  heart.innerHTML="❤️";
-
-  heart.style.left=Math.random()*100+"%";
-  heart.style.animationDuration=(6+Math.random()*7)+"s";
-  heart.style.animationDelay=(Math.random()*7)+"s";
-
-  document.body.appendChild(heart);
-}
-</script>
-
-
-<div class="container">
-
-  <!-- FIRST SCREEN -->
-  <section class="screen active" id="welcome">
-
-    <div class="heart">❤️</div>
-
-    <h1>Rimsha...</h1>
-
-    <p class="main-text">
-      Aapke liye ek khaas letter aaya hai...
-      <br><br>
-      Isse thoda dil se padhna. ✨
+    <p>
+      Aapke liye ek chhota sa message hai…
     </p>
 
-    <button class="btn" onclick="openLetter()">
-      Open Letter 💌
+    <p class="small">
+      Is baar please ise dil se padhna. 🥺
+    </p>
+
+    <button class="open" onclick="openLetter()">
+      Open My Sorry Letter 💌
     </button>
+  </div>
+</section>
 
-  </section>
 
+<!-- LETTER -->
+<section id="letterSection" class="hidden">
+  <div class="card">
 
-  <!-- LETTER SCREEN -->
-  <section class="screen" id="letterScreen">
+    <p class="small">A SINCERE APOLOGY</p>
 
-    <div class="subtitle">
-      A little message from Jasim
-    </div>
-
-    <h1>For Rimsha ❤️</h1>
+    <h2>I’m Sorry, Rimsha ❤️</h2>
 
     <div class="letter">
+      <p>
+Rimsha,
 
-      <h2>Dear Rimsha ❤️</h2>
+Mujhe pata hai tumhe lagta hai ke main tumhe ignore karta hoon…
 
-      <p id="typing"></p>
+Aur honestly, agar meri kisi baat, late reply ya busy hone ki wajah se tumhe aisa feel hua ke main tumhe ignore kar raha hoon, then I’m genuinely sorry. 🥺❤️
 
-      <div class="choice-title">
-        Ab tumhara jawab... ❤️
-      </div>
+Mera intention kabhi bhi tumhe hurt karna ya tumhe unwanted feel karwana nahi tha.
 
-      <form
-        id="replyForm"
-        action="https://formspree.io/f/xnpqnyaa"
-        method="POST"
-      >
+Kabhi kabhi main apni cheezon mein busy ho jata hoon, lekin mujhe samajhna chahiye tha ke meri silence tumhe kaisa feel karwa sakti hai.
 
-        <div class="choices">
+Main perfect nahi hoon, lekin tumhari feelings mere liye important hain.
 
-          <label class="choice">
-            <input
-              type="radio"
-              name="choice"
-              value="Yes ❤️"
-              required
-            >
-            <span>Yes ❤️</span>
-          </label>
+Main nahi chahta ke meri wajah se tum sad ya ignored feel karo.
 
-          <label class="choice">
-            <input
-              type="radio"
-              name="choice"
-              value="Maybe 😊"
-            >
-            <span>Maybe 😊</span>
-          </label>
+So… dil se sorry. 🥺❤️
 
-          <label class="choice">
-            <input
-              type="radio"
-              name="choice"
-              value="No 💔"
-            >
-            <span>No 💔</span>
-          </label>
+I’ll try to communicate better aur make sure tumhe meri wajah se aisa feel na ho ke tum important nahi ho.
 
-        </div>
-
-
-        <textarea
-          name="message"
-          maxlength="500"
-          placeholder="Jo dil mein hai, yahan likh sakti ho... ❤️"
-          required
-        ></textarea>
-
-
-        <input
-          type="hidden"
-          name="recipient"
-          value="Rimsha"
-        >
-
-        <input
-          type="hidden"
-          name="sender"
-          value="Jasim"
-        >
-
-        <input
-          type="hidden"
-          name="_subject"
-          value="Rimsha's Reply ❤️"
-        >
-
-
-        <button
-          class="btn"
-          id="sendBtn"
-          type="submit"
-        >
-          Send My Reply 💌
-        </button>
-
-        <div
-          class="status"
-          id="status"
-        ></div>
-
-      </form>
-
+— Jasim ❤️
+      </p>
     </div>
 
-  </section>
+    <br>
 
+    <h2>Kya tum mujhe maaf karogi? 🥺❤️</h2>
 
-  <!-- FINAL SCREEN -->
-  <section class="screen" id="success">
-
-    <div class="final-heart">
-      ❤️
-    </div>
-
-    <h1>
-      Thank You, Rimsha ❤️
-    </h1>
-
-    <p class="final-text">
-
-      Tumhara reply Jasim tak pahunch gaya.
-
-      <br><br>
-
-      Whatever the future brings,
-      I hope it brings happiness,
-      smiles and beautiful memories.
-
-    </p>
-
-    <p class="signature">
-      With love,
-      <br>
-      <strong>Jasim ❤️</strong>
-    </p>
-
-    <button
-      class="btn"
-      onclick="location.reload()"
-    >
-      Replay ✨
+    <button class="yes" onclick="forgive()">
+      Yes, I forgive you ❤️
     </button>
 
-  </section>
+    <button class="maybe" onclick="needTime()">
+      Thoda time chahiye 🥺
+    </button>
 
-</div>
+    <button class="no" id="noBtn">
+      No 😔
+    </button>
+
+    <textarea id="reply"
+      placeholder="Jo dil mein hai, mujhe honestly bata do… ❤️"></textarea>
+
+    <button class="send" onclick="sendReply()">
+      Send My Reply 💌
+    </button>
+
+    <div id="message"></div>
+
+  </div>
+</section>
 
 
 <script>
 
-/* LETTER TEXT */
+/* =========================
+   WEBSITE SETTINGS
+   ========================= */
 
-const message =
-`Rimsha,
+const recipientName = "Rimsha";
+const senderName = "Jasim";
 
-Kuch feelings aisi hoti hain jo words mein explain karna mushkil hota hai... ❤️
-
-Tum meri life mein ek bohat special person ho.
-
-Main perfect hone ka promise nahi karta, lekin main hamesha sincere rehne, tumhari respect karne aur tumhe khush dekhne ki koshish karunga.
-
-Mujhe nahi pata future exactly kya lekar aayega...
-
-Lekin aaj main tumse ek simple sa sawaal poochna chahta hoon:
-
-Kya tum Jasim ke saath is beautiful journey ko ek chance dena chahti ho? ❤️`;
+/* Formspree */
+const formEndpoint =
+"https://formspree.io/f/xnpqnyaa";
 
 
-/* OPEN LETTER */
+/* =========================
+   OPEN LETTER
+   ========================= */
 
 function openLetter(){
 
-  document
-    .getElementById("welcome")
-    .classList.remove("active");
+  document.getElementById("intro").style.display="none";
 
-  document
-    .getElementById("letterScreen")
-    .classList.add("active");
+  document.getElementById("letterSection")
+    .classList.remove("hidden");
 
-  const box=document.getElementById("typing");
-
-  box.textContent="";
-
-  let i=0;
-
-  function typeText(){
-
-    if(i < message.length){
-
-      box.textContent += message.charAt(i);
-
-      i++;
-
-      setTimeout(typeText,22);
-
-    }
-
-  }
-
-  typeText();
-
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
 
 
-/* FORMSPREE SUBMISSION */
+/* =========================
+   YES BUTTON
+   ========================= */
 
-const form=document.getElementById("replyForm");
+function forgive(){
 
-form.addEventListener("submit",async function(event){
+  document.getElementById("message").innerHTML =
+  "Thank you, Rimsha ❤️🥺<br><br>" +
+  "Mujhe apni feelings honestly batane aur mujhe samajhne ka chance dene ke liye thank you.";
 
-  event.preventDefault();
+  createHearts();
+}
 
-  const button=document.getElementById("sendBtn");
-  const status=document.getElementById("status");
 
-  button.disabled=true;
-  button.innerText="Sending... 💌";
+/* =========================
+   MAYBE BUTTON
+   ========================= */
 
-  status.className="status";
-  status.innerText="";
+function needTime(){
 
+  document.getElementById("message").innerHTML =
+  "It's okay Rimsha 🥺❤️<br><br>" +
+  "Main tumhe time dunga. Jab tum ready ho, mujhe honestly bata dena.";
+}
+
+
+/* =========================
+   MOVING NO BUTTON
+   ========================= */
+
+const noBtn = document.getElementById("noBtn");
+
+function moveNo(){
+
+  const maxX = window.innerWidth - 130;
+  const maxY = window.innerHeight - 80;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noBtn.style.position="fixed";
+  noBtn.style.left=x+"px";
+  noBtn.style.top=y+"px";
+}
+
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("touchstart",function(e){
+  e.preventDefault();
+  moveNo();
+});
+
+
+/* =========================
+   SEND REPLY TO FORMSPREE
+   ========================= */
+
+async function sendReply(){
+
+  const reply =
+    document.getElementById("reply").value.trim();
+
+  const message =
+    document.getElementById("message");
+
+  if(!reply){
+
+    message.innerHTML =
+      "Pehle apne dil ki baat likho Rimsha 🥺❤️";
+
+    return;
+  }
+
+  message.innerHTML="Sending… 💌";
 
   try{
 
-    const response=await fetch(
-      form.action,
-      {
-        method:"POST",
-        body:new FormData(form),
-        headers:{
-          "Accept":"application/json"
-        }
-      }
-    );
+    const response = await fetch(formEndpoint,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "Accept":"application/json"
+      },
+      body:JSON.stringify({
 
+        name:recipientName,
+
+        reply:reply,
+
+        from:senderName,
+
+        subject:"Rimsha's Reply - Sorry Website"
+
+      })
+    });
 
     if(response.ok){
 
-      status.className="status success";
+      message.innerHTML =
+        "Your message has been sent ❤️🥺<br>" +
+        "Thank you for being honest with me.";
 
-      status.innerText=
-        "Your reply has been sent ❤️";
+      document.getElementById("reply").value="";
 
-      setTimeout(function(){
+    }else{
 
-        document
-          .getElementById("letterScreen")
-          .classList.remove("active");
-
-        document
-          .getElementById("success")
-          .classList.add("active");
-
-        window.scrollTo({
-          top:0,
-          behavior:"smooth"
-        });
-
-      },1200);
-
-      form.reset();
+      message.innerHTML =
+        "Message send nahi ho saka. Please dobara try karo. ❤️";
 
     }
 
-    else{
+  }catch(error){
 
-      status.className="status error";
-
-      status.innerText=
-        "Something went wrong. Please try again.";
-
-    }
+    message.innerHTML =
+      "Internet connection check karo aur dobara try karo. ❤️";
 
   }
+}
 
-  catch(error){
 
-    status.className="status error";
+/* =========================
+   FLOATING HEARTS
+   ========================= */
 
-    status.innerText=
-      "Internet connection check karke dobara try karo.";
+function createHearts(){
 
+  for(let i=0;i<20;i++){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+    heart.innerHTML="❤️";
+
+    heart.style.left =
+      Math.random()*100+"vw";
+
+    heart.style.fontSize =
+      (12+Math.random()*25)+"px";
+
+    heart.style.animationDuration =
+      (3+Math.random()*4)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+      heart.remove();
+    },7000);
   }
-
-
-  button.disabled=false;
-
-  button.innerText="Send My Reply 💌";
-
-});
+}
 
 </script>
 
 </body>
-</html>
+  </html>
