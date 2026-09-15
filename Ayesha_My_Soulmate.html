@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ayesha — My Soulmate ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#080808;color:#fff;overflow-x:hidden}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:25px 18px}
+.card{width:100%;max-width:680px;background:#181818;border:1px solid #333;border-radius:26px;padding:35px 24px;text-align:center;box-shadow:0 0 45px #000}
+h1{font-size:44px;margin-bottom:18px}h2{font-size:30px;margin:12px 0 20px}
+p{line-height:1.8;color:#ddd}.small{color:#aaa;margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:4px;color:#aaa}
+button{border:0;border-radius:50px;padding:14px 24px;margin:8px;font-size:16px;cursor:pointer;transition:.3s}
+button:hover{transform:scale(1.05)}.primary{background:#fff;color:#111}.pink{background:#ff4f81;color:#fff}.dark{background:#333;color:#fff}
+.hidden{display:none}
+.opening-card{position:relative;overflow:hidden}
+.big-letter{
+  font-size:105px;
+  line-height:1;
+  margin:5px 0 20px;
+  filter:drop-shadow(0 8px 18px rgba(255,255,255,.12));
+  animation:letterFloat 2.8s ease-in-out infinite;
+}
+.special-heading{
+  font-size:23px;
+  margin:8px 0 12px;
+  letter-spacing:.3px;
+}
+.open-letter-btn{
+  padding:16px 30px;
+  font-size:17px;
+  box-shadow:0 8px 25px rgba(255,255,255,.12);
+}
+.letter-card{overflow:hidden}
+.opened-letter{
+  font-size:72px;
+  margin-bottom:8px;
+  animation:openPop .8s ease;
+}
+@keyframes letterFloat{
+  0%,100%{transform:translateY(0) rotate(-2deg)}
+  50%{transform:translateY(-9px) rotate(2deg)}
+}
+@keyframes openPop{
+  0%{transform:scale(.5);opacity:0}
+  100%{transform:scale(1);opacity:1}
+}
+.letter{text-align:left;margin-top:20px}.letter p{white-space:pre-line}
+.grid{display:grid;gap:12px;margin-top:20px}.box{padding:17px;border-radius:17px;background:#111;border:1px solid #292929;text-align:left}
+.gallery{display:flex;gap:12px;overflow-x:auto;margin-top:20px}.gallery img{width:180px;height:220px;object-fit:cover;border-radius:18px;flex:0 0 auto}
+.placeholder{min-width:180px;height:220px;display:flex;align-items:center;justify-content:center;border:1px dashed #555;border-radius:18px;color:#aaa;background:#111}
+.counter{font-size:27px;font-weight:bold;margin:20px 0}.envelope{font-size:75px;cursor:pointer}
+textarea{width:100%;min-height:135px;margin-top:20px;padding:15px;border-radius:16px;border:1px solid #444;background:#101010;color:#fff;resize:none;outline:none}
+#status,#answerStatus{margin-top:18px;color:#ffb3c6;line-height:1.7}
+.heart{position:fixed;bottom:-30px;z-index:999;pointer-events:none;animation:float 5s linear forwards}
+@keyframes float{0%{transform:translateY(0);opacity:0}15%{opacity:.8}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@media(max-width:520px){h1{font-size:35px}h2{font-size:26px}.card{padding:30px 18px}.gallery img,.placeholder{width:160px;min-width:160px;height:200px}}
+</style>
+</head>
+<body>
+
+<section id="home">
+  <div class="card opening-card">
+    <div class="big-letter" aria-label="Special letter">💌</div>
+    <h1>Ayesha… ❤️</h1>
+    <h2 class="special-heading">There Is A Special Letter For You</h2>
+    <p class="small">Is letter ko open karo… ismein mere dil ki baat hai. 🥺❤️</p>
+    <button class="primary open-letter-btn" onclick="show('letter')">
+      Open The Letter 💌
+    </button>
+  </div>
+</section>
+
+<section id="letter" class="hidden">
+  <div class="card letter-card">
+    <div class="opened-letter">💌</div>
+    <p class="eyebrow">A LETTER FROM MY HEART</p>
+    <h2>I Love You, Ayesha ❤️</h2>
+
+    <div class="letter">
+      <p>Ayesha,
+
+I don't know if words can ever fully explain what you mean to me, but I still want to try.
+
+Tum meri life ka ek bohat special hissa ho. Tumhari smile, tumhari care aur tumhara mere saath hona mere liye bohat matter karta hai. ❤️
+
+I really love you, Ayesha. 🥺❤️
+
+Main perfect nahi hoon, lekin meri feelings tumhare liye genuine hain. Main chahta hoon ke hum ek dusre ko samjhein, respect karein aur har situation mein ek dusre ka saath dein.
+
+Thank you for being someone so special to me.
+
+I love you, Ayesha. ❤️
+Always remember that.
+
+— Jasim ❤️</p>
+    </div>
+
+    <button class="pink" onclick="show('story')">Continue Our Story ✨</button>
+  </div>
+</section>
+
+<section id="story" class="hidden"><div class="card">
+<p class="eyebrow">OUR JOURNEY</p><h2>Our Little Story 💕</h2>
+<div class="grid">
+<div class="box"><b>🌸 The Beginning</b><p>Jahan se humari story ne ek beautiful turn liya.</p></div>
+<div class="box"><b>💬 The Conversations</b><p>Woh baatein jo humein closer laati gayin.</p></div>
+<div class="box"><b>❤️ The Feelings</b><p>Jab mujhe realize hua ke tum mere liye ordinary nahi ho.</p></div>
+<div class="box"><b>♾️ Today & Beyond</b><p>Main chahta hoon ke hum hamesha ek dusre ko samjhein.</p></div>
+</div>
+<button class="primary" onclick="show('reasons')">Why You're Special 🌹</button>
+</div></section>
+
+<section id="reasons" class="hidden"><div class="card">
+<p class="eyebrow">JUST FOR YOU</p><h2>Why You're Special ❤️</h2>
+<div class="grid">
+<div class="box">✨ Your smile can change my mood.</div>
+<div class="box">💗 You have a special place in my heart.</div>
+<div class="box">🥺 Your care means more than you realize.</div>
+<div class="box">🌙 Talking to you makes ordinary days special.</div>
+<div class="box">♾️ I love the person you are.</div>
+</div>
+<button class="pink" onclick="show('counter')">Our Special Day ⏳</button>
+</div></section>
+
+
+<section id="counter" class="hidden"><div class="card">
+<p class="eyebrow">EVERY DAY MATTERS</p><h2>Time Since Our Special Day ❤️</h2>
+<div id="counterText" class="counter"></div>
+<p class="small">Hamari relationship <b>2 June 2026</b> ko start hui thi. ❤️</p>
+<button class="pink" onclick="show('secret')">I Have a Secret 🤫</button>
+</div></section>
+
+<section id="secret" class="hidden"><div class="card">
+<p class="eyebrow">ONLY FOR AYESHA</p><h2>Open This 💌</h2>
+<div class="envelope" onclick="document.getElementById('secretText').classList.remove('hidden');hearts(15)">💌</div>
+<p id="secretText" class="hidden">Ayesha, agar tum yahan tak aa gayi ho… remember: you are deeply special to me. ❤️<br><br>Forever grateful for you. — Jasim</p>
+<button class="primary" onclick="show('question')">One Last Question 🥺</button>
+</div></section>
+
+<section id="question" class="hidden"><div class="card">
+<p class="eyebrow">FROM JASIM</p><h2>Will You Always Be My Soulmate? ❤️</h2>
+<p class="small">Choose honestly… but choose with your heart. 🥺</p>
+<button class="pink" onclick="answer('yes')">Yes, Always ❤️</button>
+<button class="dark" onclick="answer('maybe')">Of Course 🥺</button>
+<button id="noBtn" class="dark">No 😭</button>
+<div id="answerStatus"></div>
+<textarea id="reply" placeholder="Jo dil mein hai, mujhe honestly bata do… ❤️"></textarea>
+<button class="primary" onclick="sendReply()">Send My Message 💌</button>
+<div id="status"></div>
+</div></section>
+
+<script>
+/* ===== EASY SETTINGS ===== */
+const relationshipStart="2026-06-02"; // Apni real date yahan likho.
+const formEndpoint="https://formspree.io/f/xnpqnyaa";
+/* ========================= */
+
+function show(id){
+ document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"));
+ const target=document.getElementById(id);
+ if(!target)return;
+ target.classList.remove("hidden");
+ setTimeout(()=>target.scrollIntoView({behavior:"smooth",block:"start"}),30);
+ hearts(6);
+}
+function hearts(n){
+ for(let i=0;i<n;i++){
+  let h=document.createElement("div");h.className="heart";
+  h.textContent=["❤️","💗","💕","💖","🥺"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"vw";h.style.fontSize=(14+Math.random()*22)+"px";
+  h.style.animationDuration=(3+Math.random()*3)+"s";document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6500);
+ }
+}
+function answer(type){
+ document.getElementById("answerStatus").innerHTML=type==="yes"
+ ? "<br><p>Then come here, soulmate. ❤️🥺<br>You've officially made Jasim smile.</p>"
+ : "<br><p>That answer is acceptable too… because I know your heart. 🥺❤️</p>";
+ hearts(type==="yes"?25:12);
+}
+const noBtn=document.getElementById("noBtn");
+function moveNo(){
+ noBtn.style.position="fixed";
+ noBtn.style.left=Math.max(10,Math.random()*(innerWidth-130))+"px";
+ noBtn.style.top=Math.max(10,Math.random()*(innerHeight-80))+"px";
+}
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("touchstart",e=>{e.preventDefault();moveNo()});
+
+async function sendReply(){
+ const reply=document.getElementById("reply").value.trim(),status=document.getElementById("status");
+ if(!reply){status.innerHTML="Pehle apne dil ki baat likho ❤️";return}
+ status.innerHTML="Sending your message… 💌";
+ try{
+  const r=await fetch(formEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+   body:JSON.stringify({name:"Ayesha",from:"Jasim",subject:"Ayesha — My Soulmate Website Reply",reply:reply})});
+  if(r.ok){status.innerHTML="Your message has been sent successfully. ❤️🥺";document.getElementById("reply").value="";hearts(20)}
+  else status.innerHTML="Message send nahi ho saka. Please dobara try karo.";
+ }catch(e){status.innerHTML="Internet connection check karo aur dobara try karo."}
+}
+function updateCounter(){
+ const start=new Date(relationshipStart+"T00:00:00"),now=new Date();
+ if(isNaN(start)){document.getElementById("counterText").textContent="Invalid date";return}
+ if(now < start){
+   document.getElementById("counterText").textContent="Our special day is coming ❤️";
+   return;
+ }
+ let cursor=new Date(start);
+ let months=0;
+ while(true){
+   let next=new Date(cursor);
+   next.setMonth(next.getMonth()+1);
+   if(next <= now){cursor=next;months++}else break;
+ }
+ let remaining=now-cursor;
+ let days=Math.floor(remaining/86400000);
+ remaining%=86400000;
+ let hours=Math.floor(remaining/3600000);
+ remaining%=3600000;
+ let mins=Math.floor(remaining/60000);
+ document.getElementById("counterText").textContent=
+   months+" Months • "+days+" Days • "+hours+" Hours • "+mins+" Minutes ❤️";
+}
+updateCounter();setInterval(updateCounter,60000);
+</script>
+</body>
+</html>
